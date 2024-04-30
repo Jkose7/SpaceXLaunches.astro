@@ -10,9 +10,11 @@ let launch;
 if (id) {
     launch = await getLaunchesById({ id });
 }
+
+const launchStatus = launch?.success ? "Success" : "Failure";
 ---
 
-<Layout title=`lanzamiento`>
+<Layout title=`${launch?.name}`>
     {
         !launch ? (
             <h1>Not launch exist</h1>
@@ -30,11 +32,29 @@ if (id) {
                     />
                 </aside>
 
-                <aside class="w-1/2">
-                    <div class="flex items-center justify-between">
+                <aside class="w-1/2 flex flex-col gap-3">
+                    <span
+                        class:list={[
+                            `text-xl text-center font-semibold px-2.5 py-0.5 rounded`,
+                            {
+                                "bg-green-400 text-green-900": launch.success,
+                                "bg-red-400 text-red-900": !launch.success,
+                            },
+                        ]}
+                    >
+                        {launchStatus}
+                    </span>
+                    
+                    <header class="flex items-center justify-between">
                         <h1 class="text-5xl font-extrabold">{launch.name}</h1>
-                        <Like id={id} transition:persist client:only></Like>
-                    </div>
+                        <Like id={id} transition:persist client:only />
+                    </header>
+
+                    <article>
+                        <p class="text-2xl font-light text-gray-400">
+                            {launch.details}
+                        </p>
+                    </article>
                 </aside>
             </article>
         )
