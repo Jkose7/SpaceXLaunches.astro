@@ -1,4 +1,5 @@
 ---
+import { Like } from "../preact/Like";
 import HeaderButton from "./HeaderButton.astro";
 
 console.log("javascript");
@@ -17,7 +18,7 @@ console.log("javascript");
     </div>
 
     <nav
-        class="flex flex-col items-center justify-between w-full text-center md:flex-row"
+        class="flex flex-col items-center justify-center w-full text-center md:flex-row"
     >
         <HeaderButton class="text-white" to="/">
             <svg
@@ -57,24 +58,6 @@ console.log("javascript");
                 ></path></svg
             >
             About Api
-        </HeaderButton>
-
-        <HeaderButton class="text-white" to="/about">
-            <svg
-                slot="before"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-                    d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path><path
-                    d="M12 9h.01"></path><path d="M11 12h1v4h1"></path></svg
-            >
-            About project
         </HeaderButton>
     </nav>
 </header>

@@ -1,6 +1,7 @@
 ---
 import { getLaunchesById } from "../../services/spacex";
 import Layout from "../../layouts/Layout.astro";
+import { Like } from "../../preact/Like";
 
 const { id } = Astro.params;
 
@@ -18,14 +19,23 @@ if (id) {
         ) : (
             <article
                 transition:name={`lauchCart-${id}`}
-                class="rounded-lg border shadow-md bg-gray-800 border-gray-700 flex flex-row-reverse w-full p-5"
+                class="rounded-lg border shadow-md bg-gray-800 border-gray-700 flex gap-4 w-full p-5"
             >
-                <img
-                    transition:name={`launch-${id}`}
-                    src={launch.links.patch.large}
-                    class="aspect-auto object-cover w-96 h-auto"
-                    alt=""
-                />
+                <aside class="w-1/2 flex justify-center bg-gray-700 rounded-md p-4">
+                    <img
+                        transition:name={`launch-${id}`}
+                        src={launch.links.patch.large}
+                        class="aspect-auto object-cover w-96 h-auto"
+                        alt=""
+                    />
+                </aside>
+
+                <aside class="w-1/2">
+                    <div class="flex items-center justify-between">
+                        <h1 class="text-5xl font-extrabold">{launch.name}</h1>
+                        <Like id={id} transition:persist client:only></Like>
+                    </div>
+                </aside>
             </article>
         )
     }

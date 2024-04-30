@@ -43,7 +43,7 @@ const launchStatus = success ? "Success" : "Failure";
                 {launchStatus}
             </span>
 
-            <Like transition:persist client:visible />
+            <Like id={id} transition:persist client:only/>
         </div>
 
         <h2 class="my-2 text-2xl font-bold tracking-tight text-white">

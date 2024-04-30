@@ -20,7 +20,7 @@ export const getLaunches = async () => {
                 sort: {
                     date_unix: "asc",
                 },
-                limit: 16,
+                limit: 12,
             },
         }),
     })
