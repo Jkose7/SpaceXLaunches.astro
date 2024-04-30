@@ -1,0 +1,32 @@
+---
+import { getLaunchesById } from "../../services/spacex";
+import Layout from "../../layouts/Layout.astro";
+
+const { id } = Astro.params;
+
+let launch;
+
+if (id) {
+    launch = await getLaunchesById({ id });
+}
+---
+
+<Layout title=`lanzamiento`>
+    {
+        !launch ? (
+            <h1>Not launch exist</h1>
+        ) : (
+            <article
+                transition:name={`lauchCart-${id}`}
+                class="rounded-lg border shadow-md bg-gray-800 border-gray-700 flex flex-row-reverse w-full p-5"
+            >
+                <img
+                    transition:name={`launch-${id}`}
+                    src={launch.links.patch.large}
+                    class="aspect-auto object-cover w-96 h-auto"
+                    alt=""
+                />
+            </article>
+        )
+    }
+</Layout>

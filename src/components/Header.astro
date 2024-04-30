@@ -6,7 +6,9 @@ console.log("javascript");
 
 <header class="py-8 px-4 mx-auto max-w-xl lg:py-16 lg:px-6">
     <div class="mx-auto text-center mb-8 lg:mb-16">
-        <h2 class="mb-4 text-5xl tracking-tight text-balance font-extrabold text-white">
+        <h2
+            class="mb-4 text-5xl tracking-tight text-balance font-extrabold text-white"
+        >
             SpaceX launches 🚀
         </h2>
         <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
@@ -17,7 +19,7 @@ console.log("javascript");
     <nav
         class="flex flex-col items-center justify-between w-full text-center md:flex-row"
     >
-        <HeaderButton class="text-white" href="/">
+        <HeaderButton class="text-white" to="/">
             <svg
                 slot="before"
                 width="24"
@@ -34,26 +36,27 @@ console.log("javascript");
                 ></path><path d="M15 9m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"
                 ></path></svg
             >
-            Last launches
+            view launches
         </HeaderButton>
 
-        <HeaderButton class="text-white" href="/oldest">
+        <HeaderButton class="text-white" to="/api">
             <svg
                 slot="before"
+                xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
-                stroke-width="2"
-                stroke="currentColor"
                 fill="none"
+                stroke="currentColor"
+                stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-cloud"
                 ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-                    d="M20.942 13.021a9 9 0 1 0 -9.407 7.967"></path><path
-                    d="M12 7v5l3 3"></path><path d="M15 19l2 2l4 -4"
+                    d="M6.657 18c-2.572 0 -4.657 -2.007 -4.657 -4.483c0 -2.475 2.085 -4.482 4.657 -4.482c.393 -1.762 1.794 -3.2 3.675 -3.773c1.88 -.572 3.956 -.193 5.444 1c1.488 1.19 2.162 3.007 1.77 4.769h.99c1.913 0 3.464 1.56 3.464 3.486c0 1.927 -1.551 3.487 -3.465 3.487h-11.878"
                 ></path></svg
             >
-            Old launches
+            About Api
         </HeaderButton>
 
         <HeaderButton class="text-white" to="/about">
