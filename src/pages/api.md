@@ -7,5 +7,5 @@ title: 'Api SpaceXLaunches'
 
 # End Points
 ```javascript
-    console.log(hi)
+    console.log('documentation')
 ```

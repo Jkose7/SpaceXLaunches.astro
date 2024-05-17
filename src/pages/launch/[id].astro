@@ -27,7 +27,7 @@ const launchStatus = launch?.success ? "Success" : "Failure";
                     <aside class="w-1/2 flex justify-center bg-gray-700 rounded-md p-4">
                         <img
                             transition:name={`launch-${id}`}
-                            src={launch.links.patch.large}
+                            src={launch.links.patch.small}
                             class="aspect-auto object-cover w-96 h-auto"
                             alt=""
                         />
@@ -65,7 +65,7 @@ const launchStatus = launch?.success ? "Success" : "Failure";
                                 <img src="../../../public/youtube.png" alt="" />
                                 <a
                                     target="_blank"
-                                    href={launch.links.wikipedia}
+                                    href={launch.links.webcast}
                                     class="font-bold"
                                 >
                                     Webcast
@@ -92,7 +92,7 @@ const launchStatus = launch?.success ? "Success" : "Failure";
                     <h1 class="text-5xl flex gap-4 font-extrabold">
                         Wikipedia
                     </h1>
-                    <iframe class="min-h-96" src={launch.links.wikipedia} frameborder="0"></iframe>
+                    <iframe class="min-h-96" ></iframe>
                 </article>
             </section>
         )
